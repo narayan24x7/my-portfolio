@@ -1,39 +1,55 @@
+"use client";
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  ExternalLink, 
-  Github, 
-  Bot, 
-  GraduationCap, 
-  Network, 
+import {
+  ExternalLink,
+  Github,
+  Bot,
+  Network,
   TestTube,
   Filter
 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
+} from "@/components/ui/dialog";
 
 const projects = [
   {
     id: 1,
     title: "AI Interview",
     category: "AI",
-    description: "Speech-to-text interview bot supporting video/voice interviews with real-time analysis",
-    tech: ["Next.js","Drizzle ORM","PostegrelSQL","Google Gemini API", "Speech Recognition",],
+    description:
+      "Speech-to-text interview bot supporting video/voice interviews with real-time analysis",
+    tech: [
+      "Next.js",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "Google Gemini API",
+      "Speech Recognition"
+    ],
     features: [
       "Real-time speech-to-text conversion",
-      "AI-powered interview analysis", 
+      "AI-powered interview analysis",
       "Video/voice interview support",
       "Automated scoring system"
     ],
     status: "Featured",
     icon: Bot,
-    color: "from-purple-500 to-indigo-500"
+    color: "from-purple-500 to-indigo-500",
+    githubLink: "https://github.com/narayan24x7/ai-interview"
   },
   {
     id: 2,
     title: "Computer Lab Network Design",
     category: "Hackathon",
-    description: "1st place college hackathon project for comprehensive lab network infrastructure",
+    description:
+      "1st place college hackathon project for comprehensive lab network infrastructure",
     tech: ["Network Design", "System Architecture", "Security Planning"],
     features: [
       "Complete network topology design",
@@ -43,13 +59,14 @@ const projects = [
     ],
     status: "🏆 1st Place",
     icon: Network,
-    color: "from-green-500 to-emerald-500"
+    color: "from-green-500 to-emerald-500",
   },
   {
     id: 3,
     title: "Wyreflow Testing Project",
     category: "Testing",
-    description: "Application testing and QA work during internship at Wyreflow Technologies",
+    description:
+      "Application testing and QA work during internship at Wyreflow Technologies",
     tech: ["Manual Testing", "Test Automation", "Bug Reporting", "QA Processes"],
     features: [
       "Comprehensive test planning",
@@ -59,7 +76,7 @@ const projects = [
     ],
     status: "Professional",
     icon: TestTube,
-    color: "from-orange-500 to-red-500"
+    color: "from-orange-500 to-red-500",
   }
 ];
 
@@ -67,10 +84,12 @@ const categories = ["All", "AI", "Development", "Testing", "Hackathon"];
 
 export const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <section id="portfolio" className="py-20 px-4">
@@ -80,7 +99,8 @@ export const Projects = () => {
           <div className="text-center space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold">Featured Projects</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A showcase of technical projects spanning AI, web development, and testing
+              A showcase of technical projects spanning AI, web development, and
+              testing
             </p>
           </div>
 
@@ -104,15 +124,22 @@ export const Projects = () => {
             {filteredProjects.map((project) => {
               const IconComponent = project.icon;
               return (
-                <Card key={project.id} className="border-primary/20 hover:border-primary/40 transition-smooth group hover:shadow-glow">
+                <Card
+                  key={project.id}
+                  className="border-primary/20 hover:border-primary/40 transition-all group hover:shadow-lg"
+                >
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-lg bg-gradient-to-r ${project.color} bg-opacity-20`}>
+                        <div
+                          className={`p-2 rounded-lg bg-gradient-to-r ${project.color} bg-opacity-20`}
+                        >
                           <IconComponent className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <CardTitle className="text-lg">{project.title}</CardTitle>
+                          <CardTitle className="text-lg">
+                            {project.title}
+                          </CardTitle>
                           <Badge variant="secondary" className="mt-1">
                             {project.status}
                           </Badge>
@@ -132,7 +159,10 @@ export const Projects = () => {
                       </h4>
                       <ul className="space-y-1">
                         {project.features.map((feature, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground">
+                          <li
+                            key={idx}
+                            className="text-sm text-muted-foreground"
+                          >
                             • {feature}
                           </li>
                         ))}
@@ -146,7 +176,11 @@ export const Projects = () => {
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((tech, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs">
+                          <Badge
+                            key={idx}
+                            variant="outline"
+                            className="text-xs"
+                          >
                             {tech}
                           </Badge>
                         ))}
@@ -155,14 +189,27 @@ export const Projects = () => {
 
                     {/* Actions */}
                     <div className="flex gap-2 pt-4 border-t border-border">
-                      <Button variant="outline" size="sm" className="group">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="group"
+                        onClick={() => setSelectedProject(project)}
+                      >
                         <ExternalLink className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
                         View Details
                       </Button>
-                      <Button variant="ghost" size="sm" className="group">
-                        <Github className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
-                
-                      </Button>
+                      {project.githubLink && (
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button variant="ghost" size="sm" className="group">
+                            <Github className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
+                            GitHub
+                          </Button>
+                        </a>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -172,13 +219,52 @@ export const Projects = () => {
 
           {/* View More */}
           <div className="text-center">
-            <Button variant="outline" size="lg" className="group">
-              View All Projects
-              <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:scale-110" />
-            </Button>
+            <a
+              href="https://github.com/narayan24x7?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="lg" className="group">
+                View All Projects
+                <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:scale-110" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>
+
+      {/* Dialog for Project Details */}
+      <Dialog
+        open={!!selectedProject}
+        onOpenChange={() => setSelectedProject(null)}
+      >
+        <DialogContent className="max-w-lg">
+          {selectedProject && (
+            <>
+              <DialogHeader>
+                <DialogTitle>{selectedProject.title}</DialogTitle>
+                <DialogDescription>
+                  {selectedProject.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="mt-4">
+                <h4 className="font-semibold mb-2">Technologies:</h4>
+                <ul className="list-disc list-inside text-sm text-gray-600">
+                  {selectedProject.tech.map((t, idx) => (
+                    <li key={idx}>{t}</li>
+                  ))}
+                </ul>
+                <h4 className="font-semibold mt-4 mb-2">Features:</h4>
+                <ul className="list-disc list-inside text-sm text-gray-600">
+                  {selectedProject.features.map((f, idx) => (
+                    <li key={idx}>{f}</li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

@@ -1,11 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Download, 
-  Briefcase, 
-  GraduationCap, 
-  Award, 
+import {
+  Download,
+  Briefcase,
+  GraduationCap,
+  Award,
   Calendar,
   MapPin
 } from "lucide-react";
@@ -18,12 +18,26 @@ const experience = [
     period: "Jun 2025 - July 2025",
     location: "On-Site",
     responsibilities: [
-      "Conducted comprehensive manual testing of web applications",
-      "Developed and executed test cases for functionality and usability",
-      "Identified and documented bugs with detailed reproduction steps",
+      "Developed a responsive React-based project, implementing dynamic UIs and ensuring mobile compatibility",
+      "Integrated interactive components and maintained clean state management using modern React practices and hooks",
+      "Built high-performance single-page applications (SPA) prioritizing seamless user experiences and minimal load times",
+      "Collaborated with mentors to debug and optimize web performance across browsers and devices"
+    ],
+    skills: ["Routing & Navigation", "Responsive Web Design", "Performance Optimization & Debugging", "API Integration"]
+  },
+  {
+    role: "Flutter Development",
+    company: "Techno Vedix Solutions PVT.LTD",
+    type: "Internship",
+    period: "Dec 2024 - Jan 2025",
+    location: "On-site",
+    responsibilities: [
+      "Developed a cross-platform Calculator App in Flutter/Dart",
+      "Demonstrated a Flutter widgets and responsive layouts",
+      "Achieving pixel-perfect UI on both Android and IOS devices",
       "Collaborated with development team on quality improvements"
     ],
-    skills: ["Manual Testing", "Bug Reporting", "QA Processes", "Test Documentation"]
+    skills: ["Cross-Platform UI Development", "Custom Widgets & Theming", "Input Validation", "Logic Implementation"]
   },
   {
     role: "Application Tester",
@@ -32,7 +46,7 @@ const experience = [
     period: "Oct 2024 - Nov 2024",
     location: "Remote",
     responsibilities: [
-      "Conducted comprehensive manual testing of web applications",
+      "Conducted comprehensive manual testing of moblie applications",
       "Developed and executed test cases for functionality and usability",
       "Identified and documented bugs with detailed reproduction steps",
       "Collaborated with development team on quality improvements"
@@ -81,7 +95,7 @@ const achievements = [
     title: "Cisco Ethical Hacker",
     description: "Comprehensive Ethical Hacking Certification",
     date: "2024",
-    type: "Certification" 
+    type: "Certification"
   }
 ];
 
@@ -96,9 +110,18 @@ export const Experience = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Professional journey combining practical experience with continuous learning
             </p>
-            <Button size="lg" className="group">
-              <Download className="mr-2 h-4 w-4" />
-              Download PDF Resume
+            <Button
+              variant="outline"
+              size="lg"
+              className="group glass-morphism border-primary/30 hover:border-primary/50 hover:bg-primary/5"
+            >
+              <Download className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
+              <a
+                href="/MyCV.pdf"
+                download="Narayan_Kachhi_Resume.pdf"
+              >
+                Download Resume
+              </a>
             </Button>
           </div>
 
@@ -108,7 +131,7 @@ export const Experience = () => {
               <Briefcase className="h-6 w-6 text-primary" />
               Professional Experience
             </h3>
-            
+
             <div className="space-y-6">
               {experience.map((exp, index) => (
                 <Card key={index} className="border-primary/20">
@@ -158,7 +181,7 @@ export const Experience = () => {
               <GraduationCap className="h-6 w-6 text-primary" />
               Education
             </h3>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               {education.map((edu, index) => (
                 <Card key={index} className="border-primary/20">
@@ -186,7 +209,7 @@ export const Experience = () => {
               <Award className="h-6 w-6 text-primary" />
               Achievements & Certifications
             </h3>
-            
+
             <div className="grid md:grid-cols-3 gap-4">
               {achievements.map((achievement, index) => (
                 <Card key={index} className="border-primary/20 text-center">

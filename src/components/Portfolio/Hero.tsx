@@ -3,16 +3,16 @@ import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Download, ArrowRight, Sparkles, Code, Palette, Bot } from "lucide-react";
 import portraitImage from "@/assets/narayan-portrait.jpg";
 
-const FloatingElement = ({ 
+const FloatingElement = ({
   children,
-  className, 
-  delay = 0 
-}: { 
-  children: React.ReactNode; 
-  className?: string; 
+  className,
+  delay = 0
+}: {
+  children: React.ReactNode;
+  className?: string;
   delay?: number;
 }) => (
-  <div 
+  <div
     className={`absolute opacity-20 ${className}`}
     style={{ animationDelay: `${delay}s` }}
   >
@@ -35,7 +35,7 @@ export const Hero = () => {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/20 to-primary-glow/20 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
-        
+
         {/* Floating Icons */}
         <FloatingElement className="top-20 left-20 animate-float" delay={1}>
           <Code className="h-8 w-8 text-primary/30" />
@@ -56,8 +56,8 @@ export const Hero = () => {
           {/* Content */}
           <div className="space-y-8">
             {/* Greeting Badge */}
-            <Badge 
-              variant="outline" 
+            <Badge
+              variant="outline"
               className="glass-morphism border-primary/30 text-primary animate-fade-in w-fit"
             >
               <Sparkles className="mr-2 h-3 w-3" />
@@ -76,9 +76,9 @@ export const Hero = () => {
                   Full-Stack Developer · Cyber Security Enthusiast · AI & Testing Practitioner
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-lg leading-relaxed animate-fade-in-up stagger-3">
-                  Designing usable interfaces, building reliable web apps, and creating 
+                  Designing usable interfaces, building reliable web apps, and creating
                   <span className="text-primary font-medium"> AI-powered experiences </span>
-                   that make a difference.
+                  that make a difference.
                 </p>
               </div>
 
@@ -103,58 +103,59 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary-glow hover:shadow-glow transition-all duration-300"
               >
-                 <a href="#portfolio"> 
-                <span className="relative z-10 flex items-center">
-                  View Portfolio
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" 
-                  />
-                </span>
+                <a href="#portfolio">
+                  <span className="relative z-10 flex items-center">
+                    View Portfolio
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    />
+                  </span>
                 </a>
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="group glass-morphism border-primary/30 hover:border-primary/50 hover:bg-primary/5"
-                
               >
-                <Download className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" 
-                  />
-                 <a download="" href="assets\MyCV.pdf" >
+                <Download className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
+                <a
+                  href="/MyCV.pdf"
+                  download="Narayan_Kachhi_Resume.pdf"
+                >
                   Download Resume
-                  </a>
+                </a>
               </Button>
             </div>
 
             {/* Social Links */}
             <div className="flex gap-4 animate-fade-in-up stagger-4">
-              <Button 
-                variant="ghost" 
-                size="icon" 
+              <Button
+                variant="ghost"
+                size="icon"
                 className="glass-morphism border border-primary/20 hover:border-primary/40 hover:bg-primary/10 group"
                 asChild
               >
-                <a 
-                  href="https://www.linkedin.com/in/narayandas-kachhi-648b02285/" 
-                  target="_blank" 
+                <a
+                  href="https://www.linkedin.com/in/narayandas-kachhi-648b02285/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
                 >
                   <Linkedin className="h-5 w-5 transition-transform group-hover:scale-110" />
                 </a>
               </Button>
-              <Button 
-                variant="ghost" 
-                size="icon" 
+              <Button
+                variant="ghost"
+                size="icon"
                 className="glass-morphism border border-primary/20 hover:border-primary/40 hover:bg-primary/10 group"
                 asChild
               >
-                <a 
-                  href="https://github.com/narayan24x7" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/narayan24x7"
+                  target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
                 >
@@ -170,12 +171,12 @@ export const Hero = () => {
               {/* Multiple Glow Layers */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-glow to-purple-500 rounded-full blur-2xl opacity-30 scale-110 animate-pulse-glow"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-primary rounded-full blur-xl opacity-20 scale-105 animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
-              
+
               {/* Portrait Container */}
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
                 {/* Glassmorphism Frame */}
                 <div className="absolute inset-0 glass-morphism rounded-full border-2 border-primary/30"></div>
-                
+
                 {/* Image */}
                 <div className="relative w-full h-full rounded-full overflow-hidden p-2">
                   <img

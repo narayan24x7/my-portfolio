@@ -28,15 +28,15 @@ export const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Quick Links</h4>
             <div className="flex flex-col gap-2">
-              {["Home","About","Skills","Portfolio","Experience"].map((link) => (
+              {["Home", "About", "Skills", "Portfolio", "Experience"].map((link) => (
                 <a
                   key={link}
                   href={`#${link.toLowerCase()}`}
                   className="text-sm text-muted-foreground hover:text-primary transition-smooth"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.querySelector(`#${link.toLowerCase()}`)?.scrollIntoView({ 
-                      behavior: "smooth" 
+                    document.querySelector(`#${link.toLowerCase()}`)?.scrollIntoView({
+                      behavior: "smooth"
                     });
                   }}
                 >
@@ -54,9 +54,9 @@ export const Footer = () => {
             <div className="flex flex-col gap-3">
               <div className="flex gap-2">
                 <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
-                  <a 
-                    href="https://www.linkedin.com/in/narayandas-kachhi-648b02285/" 
-                    target="_blank" 
+                  <a
+                    href="https://www.linkedin.com/in/narayandas-kachhi-648b02285/"
+                    target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Profile"
                   >
@@ -64,9 +64,9 @@ export const Footer = () => {
                   </a>
                 </Button>
                 <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
-                  <a 
-                    href="https://github.com/narayan24x7" 
-                    target="_blank" 
+                  <a
+                    href="https://github.com/narayan24x7"
+                    target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub Profile"
                   >
@@ -74,10 +74,6 @@ export const Footer = () => {
                   </a>
                 </Button>
               </div>
-              <Button variant="outline" size="sm" className="w-fit">
-                <Download className="mr-2 h-3 w-3" />
-                Resume PDF
-              </Button>
             </div>
           </div>
         </div>
@@ -87,19 +83,19 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            <span>© {currentYear} Narayan Kachhi. Made with</span>
+            <span>© {currentYear} Narayandas Kachhi. Made with</span>
             <Heart className="h-4 w-4 text-primary fill-primary" />
             <span>in India</span>
           </div>
-          
+
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="hover:text-primary transition-smooth"
               onClick={(e) => {
                 e.preventDefault();
-                document.querySelector("#contact")?.scrollIntoView({ 
-                  behavior: "smooth" 
+                document.querySelector("#contact")?.scrollIntoView({
+                  behavior: "smooth"
                 });
               }}
             >

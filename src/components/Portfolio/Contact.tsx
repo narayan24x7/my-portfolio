@@ -4,15 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { 
-  Mail, 
-  Linkedin, 
-  Github, 
-  MapPin, 
+import {
+  Mail,
+  Linkedin,
+  Github,
+  MapPin,
   Send,
   Calendar,
   ExternalLink
 } from "lucide-react";
+import emailjs from "emailjs-com"; // ✅ EmailJS
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,29 +22,45 @@ export const Contact = () => {
     message: ""
   });
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create mailto link
-    const subject = `Portfolio Contact from ${formData.name}`;
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoLink = `mailto:narayankachhi@email.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    toast({
-      title: "Email client opened",
-      description: "Your message has been prepared in your email client.",
-    });
-    
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
+    setLoading(true);
+
+    emailjs
+      .send(
+        "service_5h73jyq", // ✅ Your service ID
+        "template_utnilwk", // ✅ Your template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message
+        },
+        "1osrukvlRsxeCxbib" // ✅ Your public key
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message Sent 🎉",
+            description: "Your message has been sent successfully!"
+          });
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          toast({
+            title: "Failed to Send ❌",
+            description: "Something went wrong. Please try again later."
+          });
+          console.error("EmailJS error:", error);
+        }
+      )
+      .finally(() => setLoading(false));
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -83,7 +100,7 @@ export const Contact = () => {
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-3">
                       <Calendar className="h-5 w-5 text-primary" />
                       <div>
@@ -99,7 +116,7 @@ export const Contact = () => {
                     <h4 className="font-medium">Connect with me</h4>
                     <div className="space-y-3">
                       <a
-                        href="https://www.linkedin.com/in/narayandas-kachhi-648b02285/"
+                        href="https://www.linkedin.com/in/narayandas-kachhi/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 p-3 rounded-lg border border-primary/20 hover:border-primary/40 transition-smooth group"
@@ -107,11 +124,13 @@ export const Contact = () => {
                         <Linkedin className="h-5 w-5 text-primary" />
                         <div>
                           <p className="font-medium">LinkedIn</p>
-                          <p className="text-sm text-muted-foreground">Professional network</p>
+                          <p className="text-sm text-muted-foreground">
+                            Professional network
+                          </p>
                         </div>
                         <ExternalLink className="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
-                      
+
                       <a
                         href="https://github.com/narayan24x7"
                         target="_blank"
@@ -121,7 +140,9 @@ export const Contact = () => {
                         <Github className="h-5 w-5 text-primary" />
                         <div>
                           <p className="font-medium">GitHub</p>
-                          <p className="text-sm text-muted-foreground">Code repositories</p>
+                          <p className="text-sm text-muted-foreground">
+                            Code repositories
+                          </p>
                         </div>
                         <ExternalLink className="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
@@ -135,16 +156,20 @@ export const Contact = () => {
                 <CardContent className="p-6">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-primary">5+</div>
+                      <div className="text-2xl font-bold text-primary">1+</div>
                       <div className="text-xs text-muted-foreground">Projects</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-primary">2+</div>
-                      <div className="text-xs text-muted-foreground">Years Experience</div>
+                      <div className="text-2xl font-bold text-primary">1+</div>
+                      <div className="text-xs text-muted-foreground">
+                        Years Experience
+                      </div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-primary">6+</div>
-                      <div className="text-xs text-muted-foreground">Certifications</div>
+                      <div className="text-2xl font-bold text-primary">3+</div>
+                      <div className="text-xs text-muted-foreground">
+                        Certifications
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -190,7 +215,7 @@ export const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium">
                       Message
@@ -200,15 +225,20 @@ export const Contact = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Tell me about your project..."
+                      placeholder="Tell me about ..."
                       className="min-h-[120px]"
                       required
                     />
                   </div>
-                  
-                  <Button type="submit" size="lg" className="w-full group">
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full group"
+                    disabled={loading}
+                  >
                     <Send className="mr-2 h-4 w-4" />
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
