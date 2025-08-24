@@ -18,36 +18,23 @@ const skillCategories = [
     icon: Code,
     skills: [
       { name: "HTML/CSS", level: "Advanced" },
-      { name: "JavaScript", level: "Advanced" },
-      { name: "React", level: "Intermediate" },
+      { name: "JavaScript", level: "Intermediate" },
+      { name: "React/Next.js", level: "Intermediate" },
       { name: "TypeScript", level: "Intermediate" },
-      { name: "Tailwind CSS", level: "Advanced" },
-      { name: "Responsive Design", level: "Advanced" }
+      { name: "Tailwind CSS", level: "Intermediate" },
+      { name: "Responsive Design", level: "Intermediate" }
     ],
     color: "from-blue-500 to-cyan-500"
-  },
-  {
-    title: "Design & UI/UX",
-    icon: Palette,
-    skills: [
-      { name: "UI/UX Design", level: "Advanced" },
-      { name: "Figma", level: "Advanced" },
-      { name: "Wireframing", level: "Advanced" },
-      { name: "Prototyping", level: "Advanced" },
-      { name: "User Research", level: "Intermediate" },
-      { name: "Design Systems", level: "Advanced" }
-    ],
-    color: "from-pink-500 to-violet-500"
   },
   {
     title: "Backend & Database",
     icon: Server,
     skills: [
+      { name: "Node.js", level:"Beginner"},
       { name: "PHP/Laravel", level: "Intermediate" },
       { name: "Python/Flask", level: "Intermediate" },
       { name: "MySQL", level: "Intermediate" },
-      { name: "API Development", level: "Intermediate" },
-      { name: "C#", level: "Beginner" },
+      { name: ".NET/C#", level: "Intermediate" },
       { name: "Database Design", level: "Intermediate" }
     ],
     color: "from-green-500 to-emerald-500"
@@ -56,9 +43,8 @@ const skillCategories = [
     title: "AI & Tools",
     icon: Bot,
     skills: [
-      { name: "OpenAI API", level: "Intermediate" },
+      { name: "LLM Model API", level: "Intermediate" },
       { name: "Dialogflow", level: "Intermediate" },
-      { name: "Chatbot Development", level: "Advanced" },
       { name: "Speech-to-Text", level: "Intermediate" },
       { name: "AI Integration", level: "Intermediate" },
       { name: "Automation", level: "Intermediate" }
@@ -71,10 +57,10 @@ const skillCategories = [
     skills: [
       { name: "Manual Testing", level: "Advanced" },
       { name: "Test Automation", level: "Intermediate" },
-      { name: "Application Testing", level: "Advanced" },
-      { name: "Test Planning", level: "Advanced" },
+      { name: "Application Testing", level: "Intermediate" },
+      { name: "Test Planning", level: "Intermediate" },
       { name: "Bug Reporting", level: "Advanced" },
-      { name: "Quality Assurance", level: "Advanced" }
+      { name: "Quality Assurance", level: "Intermediate" }
     ],
     color: "from-orange-500 to-red-500"
   }

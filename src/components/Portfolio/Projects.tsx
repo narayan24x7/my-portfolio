@@ -22,10 +22,10 @@ import {
 const projects = [
   {
     id: 1,
-    title: "AI Interview",
+    title: "Placeifiy-AI",
     category: "AI",
     description:
-      "Speech-to-text interview bot supporting video/voice interviews with real-time analysis",
+      "Speech-to-text interview web-application supporting video/voice interviews with real-time analysis",
     tech: [
       "Next.js",
       "Drizzle ORM",
@@ -42,7 +42,7 @@ const projects = [
     status: "Featured",
     icon: Bot,
     color: "from-purple-500 to-indigo-500",
-    githubLink: "https://github.com/narayan24x7/ai-interview"
+    githubLink: "https://github.com/narayan24x7/Placeifiy-AI"
   },
   {
     id: 2,

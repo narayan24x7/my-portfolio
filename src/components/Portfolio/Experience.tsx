@@ -18,12 +18,13 @@ const experience = [
     period: "Jun 2025 - July 2025",
     location: "On-Site",
     responsibilities: [
-      "Developed a responsive React-based project, implementing dynamic UIs and ensuring mobile compatibility",
-      "Integrated interactive components and maintained clean state management using modern React practices and hooks",
-      "Built high-performance single-page applications (SPA) prioritizing seamless user experiences and minimal load times",
-      "Collaborated with mentors to debug and optimize web performance across browsers and devices"
+      "React Core Concepts - Componets, Props, State, Hooks, Lifecycle Methods",
+      "Advandced UI Development - Responsive design, reuseable components, and animations",
+      "API Integration - Fetching, managing and rendring dynamic data",
+      "State Management - Redux, Conntext API, and efficient data flow",
+      "Version Control - Git/Github collaboration and branching strategies"
     ],
-    skills: ["Routing & Navigation", "Responsive Web Design", "Performance Optimization & Debugging", "API Integration"]
+    skills: ["Lifecycle Methods", "Responsive Web Design","API Integration","Redux ToolKit","Version Control"]
   },
   {
     role: "Flutter Development",
@@ -35,7 +36,7 @@ const experience = [
       "Developed a cross-platform Calculator App in Flutter/Dart",
       "Demonstrated a Flutter widgets and responsive layouts",
       "Achieving pixel-perfect UI on both Android and IOS devices",
-      "Collaborated with development team on quality improvements"
+      "Collaborated with my mentor to improve development quality"
     ],
     skills: ["Cross-Platform UI Development", "Custom Widgets & Theming", "Input Validation", "Logic Implementation"]
   },
@@ -52,23 +53,6 @@ const experience = [
       "Collaborated with development team on quality improvements"
     ],
     skills: ["Manual Testing", "Bug Reporting", "QA Processes", "Test Documentation"]
-  }
-];
-
-const education = [
-  {
-    degree: "B.Voc in Software Development",
-    institution: "C.P. Patel & F.H. Shah Commerce College",
-    university: "Sardar Patel University",
-    status: "Currently Pursuing",
-    description: "Comprehensive software development program covering programming, databases, and software engineering principles."
-  },
-  {
-    degree: "ITI COPA",
-    institution: "Industrial Training Institute",
-    university: "Computer Operator & Programming Assistant",
-    status: "Completed",
-    description: "Technical certification in computer operations, programming, and digital literacy."
   }
 ];
 
@@ -106,7 +90,7 @@ export const Experience = () => {
         <div className="space-y-12">
           {/* Header */}
           <div className="text-center space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-bold">Experience & Education</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold">Experience</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Professional journey combining practical experience with continuous learning
             </p>
@@ -169,34 +153,6 @@ export const Experience = () => {
                         </Badge>
                       ))}
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Education */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold flex items-center gap-2">
-              <GraduationCap className="h-6 w-6 text-primary" />
-              Education
-            </h3>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {education.map((edu, index) => (
-                <Card key={index} className="border-primary/20">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{edu.degree}</CardTitle>
-                    <div className="space-y-1">
-                      <p className="text-muted-foreground">{edu.institution}</p>
-                      <p className="text-sm text-muted-foreground">{edu.university}</p>
-                      <Badge variant="outline" className="w-fit">
-                        {edu.status}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{edu.description}</p>
                   </CardContent>
                 </Card>
               ))}

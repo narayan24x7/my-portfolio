@@ -18,7 +18,6 @@ export const Portfolio = () => {
         </section>
         <About />
         <Skills />
-        <Services />
         <Projects />
         <Experience />
         <Contact />
