@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import {
   Download,
   Briefcase,
-  GraduationCap,
   Award,
   Calendar,
   MapPin
@@ -13,32 +12,43 @@ import {
 const experience = [
   {
     role: "React Development",
-    company: "VinixInfoTech.PVT.LTD",
+    company: "VinixInfoTech Pvt. Ltd",
     type: "Internship",
-    period: "Jun 2025 - July 2025",
+    period: "Jun 2025 - Jul 2025",
     location: "On-Site",
     responsibilities: [
-      "React Core Concepts - Componets, Props, State, Hooks, Lifecycle Methods",
-      "Advandced UI Development - Responsive design, reuseable components, and animations",
-      "API Integration - Fetching, managing and rendring dynamic data",
-      "State Management - Redux, Conntext API, and efficient data flow",
-      "Version Control - Git/Github collaboration and branching strategies"
+      "React Core Concepts - Components, Props, State, Hooks, Lifecycle Methods",
+      "Advanced UI Development - Responsive design, reusable components, and animations",
+      "API Integration - Fetching, managing and rendering dynamic data",
+      "State Management - Redux, Context API, and efficient data flow",
+      "Version Control - Git/GitHub collaboration and branching strategies"
     ],
-    skills: ["Lifecycle Methods", "Responsive Web Design","API Integration","Redux ToolKit","Version Control"]
+    skills: [
+      "Lifecycle Methods",
+      "Responsive Web Design",
+      "API Integration",
+      "Redux Toolkit",
+      "Version Control"
+    ]
   },
   {
     role: "Flutter Development",
-    company: "Techno Vedix Solutions PVT.LTD",
+    company: "Techno Vedix Solutions Pvt. Ltd",
     type: "Internship",
     period: "Dec 2024 - Jan 2025",
-    location: "On-site",
+    location: "On-Site",
     responsibilities: [
       "Developed a cross-platform Calculator App in Flutter/Dart",
-      "Demonstrated a Flutter widgets and responsive layouts",
-      "Achieving pixel-perfect UI on both Android and IOS devices",
-      "Collaborated with my mentor to improve development quality"
+      "Demonstrated Flutter widgets and responsive layouts",
+      "Achieved pixel-perfect UI on both Android and iOS devices",
+      "Collaborated with mentor to improve development quality"
     ],
-    skills: ["Cross-Platform UI Development", "Custom Widgets & Theming", "Input Validation", "Logic Implementation"]
+    skills: [
+      "Cross-Platform UI Development",
+      "Custom Widgets & Theming",
+      "Input Validation",
+      "Logic Implementation"
+    ]
   },
   {
     role: "Application Tester",
@@ -47,12 +57,17 @@ const experience = [
     period: "Oct 2024 - Nov 2024",
     location: "Remote",
     responsibilities: [
-      "Conducted comprehensive manual testing of moblie applications",
+      "Conducted comprehensive manual testing of mobile applications",
       "Developed and executed test cases for functionality and usability",
       "Identified and documented bugs with detailed reproduction steps",
       "Collaborated with development team on quality improvements"
     ],
-    skills: ["Manual Testing", "Bug Reporting", "QA Processes", "Test Documentation"]
+    skills: [
+      "Manual Testing",
+      "Bug Reporting",
+      "QA Processes",
+      "Test Documentation"
+    ]
   }
 ];
 
