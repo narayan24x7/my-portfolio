@@ -110,15 +110,16 @@ export const Experience = () => {
               Professional journey combining practical experience with continuous learning
             </p>
             <Button
+              asChild
               variant="outline"
               size="lg"
               className="group glass-morphism border-primary/30 hover:border-primary/50 hover:bg-primary/5"
             >
-              <Download className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
               <a
                 href="/MyCV.pdf"
                 download="Narayan_Kachhi_Resume.pdf"
               >
+                <Download className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
                 Download Resume
               </a>
             </Button>
