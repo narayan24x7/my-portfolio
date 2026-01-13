@@ -9,7 +9,8 @@ import {
   Bot,
   Network,
   TestTube,
-  Filter
+  Filter,
+  Icon
 } from "lucide-react";
 import {
   Dialog,
@@ -20,8 +21,33 @@ import {
 } from "@/components/ui/dialog";
 
 const projects = [
+   {
+  id: 1,
+  title: "Secure File Sharing",
+  category: "Security",
+  description:
+    "A secure file sharing web application that allows users to upload, encrypt, and share files safely with role-based access control and time-limited download links.",
+  tech: [
+    "Next.js",
+    "PostgreSQL",
+    "AES Encryption",
+    "JWT Authentication"
+  ],
+  features: [
+    "End-to-end file encryption before storage",
+    "Secure file upload and download system",
+    "Role-based access control (RBAC)",
+    "Time-limited and password-protected share links",
+    "User authentication using JWT",
+    "Activity logging and access tracking"
+  ],
+    status: "Featured",
+    Icon: Lock,
+    color: "from-blue-500 to-cyan-500",
+    githubLink: "https://github.com/narayan24x7/secure-file-sharing"
+  },
   {
-    id: 1,
+    id: 2,
     title: "Placeifiy-AI",
     category: "AI",
     description:
@@ -44,24 +70,7 @@ const projects = [
     color: "from-purple-500 to-indigo-500",
     githubLink: "https://github.com/narayan24x7/Placeifiy-AI"
   },
-  {
-    id: 2,
-    title: "Computer Lab Network Design",
-    category: "Hackathon",
-    description:
-      "1st place college hackathon project for comprehensive lab network infrastructure",
-    tech: ["Network Design", "System Architecture", "Security Planning"],
-    features: [
-      "Complete network topology design",
-      "Security implementation strategy",
-      "Cost-effective solution planning",
-      "Scalable infrastructure design"
-    ],
-    status: "🏆 1st Place",
-    icon: Network,
-    color: "from-green-500 to-emerald-500",
-  },
-  {
+   {
     id: 3,
     title: "Wyreflow Testing Project",
     category: "Testing",
@@ -77,6 +86,23 @@ const projects = [
     status: "Professional",
     icon: TestTube,
     color: "from-orange-500 to-red-500",
+  },
+  {
+    id: 4,
+    title: "Computer Lab Network Design",
+    category: "Hackathon",
+    description:
+      "1st place college hackathon project for comprehensive lab network infrastructure",
+    tech: ["Network Design", "System Architecture", "Security Planning"],
+    features: [
+      "Complete network topology design",
+      "Security implementation strategy",
+      "Cost-effective solution planning",
+      "Scalable infrastructure design"
+    ],
+    status: "🏆 1st Place",
+    icon: Network,
+    color: "from-green-500 to-emerald-500",
   }
 ];
 
