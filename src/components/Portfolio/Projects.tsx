@@ -48,31 +48,41 @@ const projects = [
   },
   {
     id: 2,
-    title: "Secure File Sharing",
+    title: "End-to-End Encrypted File Sharing",
     category: "Security",
     description:
-      "A secure file sharing web application enabling encrypted uploads, controlled access, and safe file sharing using time-limited links.",
+      "A high-performance end-to-end encrypted (E2EE) file sharing web application focused on privacy and security. Files are encrypted client-side using hybrid cryptography and shared via password-protected, time-limited links, ensuring only intended recipients can decrypt the data.",
     tech: [
-      "Next.js",
-      "Node.js",
-      "Drizzle ORM",
+      "Next.js (App Router)",
+      "TypeScript",
+      "Rust (Axum)",
+      "Tokio Async Runtime",
       "PostgreSQL",
-      "AES Encryption",
-      "JWT Authentication"
-    ],
-    features: [
-      "End-to-end encrypted file storage",
-      "Secure upload and download system",
-      "Role-based access control (RBAC)",
-      "Time-limited and password-protected links",
-      "JWT-based authentication",
-      "Access activity logging"
-    ],
+      "SQLx",
+      "AES-256-CBC Encryption",
+      "RSA-2048 Key Exchange",
+      "Argon2 Password Hashing",
+      "JWT Authentication",
+  ],
+  features: [
+      "End-to-end encrypted (E2EE) file storage using AES-256-CBC",
+      "Hybrid cryptography with RSA-2048 for secure key exchange",
+      "Client-side encryption before file upload",
+      "Password-protected and time-limited sharing links",
+      "JWT-based authentication using HTTP-only cookies",
+      "Per-user RSA key pair generation for secure file decryption",
+      "Automated cleanup of expired files via background job scheduler",
+      "Recipient search using email-based public key discovery",
+      "Responsive dashboard with sent and received file tracking",
+      "Dark mode support and enhanced UI/UX",
+      "Centralized error handling and Zod-based form validation"
+  ],
     status: "Featured",
     icon: Lock,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-blue-600 to-cyan-500",
     githubLink: "https://github.com/narayan24x7/secure-file-sharing"
   },
+
   {
     id: 3,
     title: "Wyreflow Testing Project",
