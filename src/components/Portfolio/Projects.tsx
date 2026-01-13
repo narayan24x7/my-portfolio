@@ -51,38 +51,35 @@ const projects = [
     title: "End-to-End Encrypted File Sharing",
     category: "Security",
     description:
-      "A high-performance end-to-end encrypted (E2EE) file sharing web application focused on privacy and security. Files are encrypted client-side using hybrid cryptography and shared via password-protected, time-limited links, ensuring only intended recipients can decrypt the data.",
+      "A high-performance end-to-end encrypted (E2EE) file sharing web application focused on privacy and security.",
     tech: [
       "Next.js (App Router)",
       "TypeScript",
       "Rust (Axum)",
-      "Tokio Async Runtime",
       "PostgreSQL",
-      "SQLx",
-      "AES-256-CBC Encryption",
-      "RSA-2048 Key Exchange",
-      "Argon2 Password Hashing",
-      "JWT Authentication",
-  ],
-  features: [
-      "End-to-end encrypted (E2EE) file storage using AES-256-CBC",
-      "Hybrid cryptography with RSA-2048 for secure key exchange",
-      "Client-side encryption before file upload",
-      "Password-protected and time-limited sharing links",
-      "JWT-based authentication using HTTP-only cookies",
-      "Per-user RSA key pair generation for secure file decryption",
-      "Automated cleanup of expired files via background job scheduler",
-      "Recipient search using email-based public key discovery",
-      "Responsive dashboard with sent and received file tracking",
-      "Dark mode support and enhanced UI/UX",
-      "Centralized error handling and Zod-based form validation"
-  ],
+      "AES-256-CBC",
+      "RSA-2048",
+      "JWT",
+      "Argon2"
+    ],
+    features: [
+      "End-to-end encrypted file storage (E2EE)",
+      "Hybrid cryptography with RSA & AES",
+      "Client-side encryption before upload",
+      "Password-protected & time-limited links",
+      "JWT authentication using HTTP-only cookies",
+      "Per-user RSA key pair generation",
+      "Automated cleanup of expired files",
+      "Recipient email-based key discovery",
+      "Dashboard for sent & received files",
+      "Dark mode & responsive UI",
+      "Centralized error handling & Zod validation"
+    ],
     status: "Featured",
     icon: Lock,
     color: "from-blue-600 to-cyan-500",
     githubLink: "https://github.com/narayan24x7/secure-file-sharing"
   },
-
   {
     id: 3,
     title: "Wyreflow Testing Project",
@@ -96,10 +93,10 @@ const projects = [
       "QA Processes"
     ],
     features: [
-      "Test case creation and execution",
+      "Test case creation & execution",
       "Manual testing cycles",
-      "Automated testing scripts",
-      "Bug tracking and reporting"
+      "Automated test scripts",
+      "Bug tracking & reporting"
     ],
     status: "Professional",
     icon: TestTube,
@@ -110,13 +107,13 @@ const projects = [
     title: "Computer Lab Network Design",
     category: "Hackathon",
     description:
-      "Award-winning hackathon project focused on designing a scalable and secure computer lab network infrastructure.",
+      "Award-winning hackathon project focused on designing a scalable and secure computer lab network.",
     tech: ["Network Design", "System Architecture", "Security Planning"],
     features: [
-      "Complete network topology planning",
+      "Network topology planning",
       "Security-focused architecture",
       "Cost-efficient infrastructure",
-      "Scalable network design"
+      "Scalable design"
     ],
     status: "🏆 1st Place",
     icon: Network,
@@ -165,13 +162,13 @@ export const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 items-start">
           {filteredProjects.map((project) => {
             const IconComponent = project.icon;
             return (
               <Card
                 key={project.id}
-                className="border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg"
+                className="h-fit border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg"
               >
                 <CardHeader>
                   <div className="flex items-center gap-3">
@@ -194,15 +191,20 @@ export const Projects = () => {
                     {project.description}
                   </p>
 
-                  {/* Features */}
+                  {/* Features (LIMITED PREVIEW) */}
                   <div>
                     <h4 className="text-sm font-semibold text-primary">
                       Key Features
                     </h4>
                     <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                      {project.features.map((feature: string, idx: number) => (
+                      {project.features.slice(0, 4).map((feature, idx) => (
                         <li key={idx}>• {feature}</li>
                       ))}
+                      {project.features.length > 4 && (
+                        <li className="text-xs italic text-muted-foreground">
+                          + {project.features.length - 4} more features
+                        </li>
+                      )}
                     </ul>
                   </div>
 
@@ -212,7 +214,7 @@ export const Projects = () => {
                       Tech Stack
                     </h4>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      {project.tech.map((tech: string, idx: number) => (
+                      {project.tech.map((tech, idx) => (
                         <Badge key={idx} variant="outline">
                           {tech}
                         </Badge>
@@ -248,23 +250,9 @@ export const Projects = () => {
             );
           })}
         </div>
-
-        {/* View More */}
-        <div className="text-center">
-          <a
-            href="https://github.com/narayan24x7?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button variant="outline" size="lg">
-              View All Projects
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </Button>
-          </a>
-        </div>
       </div>
 
-      {/* Project Details Dialog */}
+      {/* Dialog */}
       <Dialog
         open={!!selectedProject}
         onOpenChange={() => setSelectedProject(null)}
