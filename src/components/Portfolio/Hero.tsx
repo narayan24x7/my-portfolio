@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Download, ArrowRight, Sparkles, Code, Palette, Bot } from "lucide-react";
-import portraitImage from "@/assets/narayan-portrait.jpg";
+import portraitImage from "@/assets/nk.jpg";
 
 const FloatingElement = ({
   children,
