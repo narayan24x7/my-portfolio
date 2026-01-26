@@ -61,7 +61,7 @@ export const Hero = () => {
               className="glass-morphism border-primary/30 text-primary animate-fade-in w-fit"
             >
               <Sparkles className="mr-2 h-3 w-3" />
-              Available for projects
+              
             </Badge>
 
             <div className="space-y-6">
